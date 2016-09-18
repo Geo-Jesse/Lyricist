@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-class SearchBar extends Component {
+class searchBar extends Component {
   render(){
     return(
       <div>Search Bar</div>
     )
   }
 }
-export default SearchBar;
+export default searchBar;
