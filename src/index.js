@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-import searchBar from './components/searchBar';
+import SearchBar from './components/SearchBar';
 
 import './index.css';
 
