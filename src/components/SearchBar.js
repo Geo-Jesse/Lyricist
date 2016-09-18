@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class searchBar extends Component {
+class SearchBar extends Component {
   render(){
     return(
       <div>Search Bar</div>
