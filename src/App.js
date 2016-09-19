@@ -10,11 +10,10 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-      <SearchBar />
-
+        <SearchBar />
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
-            <div className="lyricsContainer col-lg-12">
+            <div className="lyricsContainer col-lg-8">
               <Lyrics />
             </div>
 
@@ -64,7 +63,7 @@ class App extends Component {
                   <div className="thumbnail">
                       <img src="http://placehold.it/800x500" alt="" />
                       <div className="caption">
-                          
+
                       </div>
                   </div>
               </div>
