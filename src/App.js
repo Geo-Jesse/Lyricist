@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 import SearchBar from './components/SearchBar';
@@ -13,13 +13,11 @@ class App extends Component {
       <SearchBar />
 
           {/* <!-- Jumbotron Header --> */}
-          <header className="jumbotron hero-spacer">
+          <header className="jumbotron hero-spacer col-lg-12">
+            <div className="lyricsContainer col-lg-6">
+              <Lyrics />
+            </div>
 
-              <h1>A Warm Welcome!</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-              <p>
-              <a className="btn btn-primary btn-large">Call to action!</a>
-              </p>
           </header>
 
           <hr />
