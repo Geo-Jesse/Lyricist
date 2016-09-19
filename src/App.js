@@ -51,7 +51,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
   render() {
     return (
       <div className="container">
-        <SearchBar />
+        <SearchBar onSearchTermChanged={this.onSearchTermChanged.bind(this)}/>
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
             <div className="lyricsContainer col-lg-8">
@@ -70,47 +70,8 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
               </div>
           </div>
           {/* <!-- /.row --> */}
+            {/* <VideoList /> */}
 
-          {/* <!-- Page Features --> */}
-          <div className="row text-center">
-
-              <div className="col-md-3 col-sm-6 hero-feature">
-                  <div className="thumbnail">
-                      <img src="http://placehold.it/800x500" alt="" />
-                      <div className="caption">
-
-                      </div>
-                  </div>
-              </div>
-
-              <div className="col-md-3 col-sm-6 hero-feature">
-                  <div className="thumbnail">
-                      <img src="http://placehold.it/800x500" alt="" />
-                      <div className="caption">
-
-                      </div>
-                  </div>
-              </div>
-
-              <div className="col-md-3 col-sm-6 hero-feature">
-                  <div className="thumbnail">
-                      <img src="http://placehold.it/800x500" alt="" />
-                      <div className="caption">
-
-                      </div>
-                  </div>
-              </div>
-
-              <div className="col-md-3 col-sm-6 hero-feature">
-                  <div className="thumbnail">
-                      <img src="http://placehold.it/800x500" alt="" />
-                      <div className="caption">
-
-                      </div>
-                  </div>
-              </div>
-
-          </div>
           {/* <!-- /.row --> */}
 
           <hr />
