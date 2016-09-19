@@ -56,7 +56,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           <header className="jumbotron hero-spacer col-lg-12">
             <div className="lyricsContainer col-lg-8">
               <Lyrics />
-              
+
             </div>
 
           </header>
@@ -119,7 +119,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           <footer>
               <div className="row">
                   <div className="col-lg-12">
-                      <p>Copyright &copy; Your Website 2014</p>
+                      <p>Copyright &copy; Kickbutt GA WDI8 Developers</p>
                   </div>
               </div>
           </footer>
