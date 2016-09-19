@@ -51,12 +51,12 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
   render() {
     return (
       <div className="container">
-      <SearchBar />
-
+        <SearchBar />
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
-            <div className="lyricsContainer col-lg-6">
+            <div className="lyricsContainer col-lg-8">
               <Lyrics />
+              
             </div>
 
           </header>
@@ -78,12 +78,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
                   <div className="thumbnail">
                       <img src="http://placehold.it/800x500" alt="" />
                       <div className="caption">
-                          <h3>Feature Label</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                          <p>
-                              <a href="#" className="btn btn-primary">Buy Now!</a>
-                               <a href="#" className="btn btn-default">More Info</a>
-                          </p>
+
                       </div>
                   </div>
               </div>
@@ -92,14 +87,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
                   <div className="thumbnail">
                       <img src="http://placehold.it/800x500" alt="" />
                       <div className="caption">
-                          <h3>Feature Label</h3>
-                          <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                          </p>
-                          <p>
-                              <a href="#" className="btn btn-primary">Buy Now!</a>
-                              <a href="#" className="btn btn-default">More Info</a>
-                          </p>
+
                       </div>
                   </div>
               </div>
@@ -108,11 +96,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
                   <div className="thumbnail">
                       <img src="http://placehold.it/800x500" alt="" />
                       <div className="caption">
-                          <h3>Feature Label</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                          <p>
-                              <a href="#" className="btn btn-primary">Buy Now!</a> <a href="#" className="btn btn-default">More Info</a>
-                          </p>
+
                       </div>
                   </div>
               </div>
@@ -121,12 +105,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
                   <div className="thumbnail">
                       <img src="http://placehold.it/800x500" alt="" />
                       <div className="caption">
-                          <h3>Feature Label</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                          <p>
-                              <a href="#" className="btn btn-primary">Buy Now!</a>
-                              <a href="#" className="btn btn-default">More Info</a>
-                          </p>
+
                       </div>
                   </div>
               </div>
