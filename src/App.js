@@ -5,8 +5,49 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchReturn from './components/SearchReturn';
 import Lyrics from './components/Lyrics';
+import VideoList from './components/VideoList';
 
-class App extends Component {
+import YTSearch from 'youtube-api-search';
+
+import _ from 'lodash';
+
+const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
+
+  class App extends Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        videos: [],
+        activeVideo: null
+      };
+
+      this.videoSearch('bears');
+
+      this.onSearchTermChanged = _.debounce(this.onSearchTermChanged, 200)
+    }
+
+    onSearchTermChanged(term) {
+      this.videoSearch(term);
+    }
+
+    videoSearch(term) {
+      YTSearch({ key: API_KEY, term: term }, (videos) => {
+        console.log('videos', videos);
+
+        this.setState({
+          videos: videos,
+          activeVideo: videos[0]
+        });
+      });
+    }
+
+    onVideoSelect(video) {
+      this.setState({
+        activeVideo: video
+      })
+    }
+
   render() {
     return (
       <div className="container">
