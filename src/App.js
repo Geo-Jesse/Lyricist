@@ -14,7 +14,7 @@ class App extends Component {
 
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
-            <div className="lyricsContainer col-lg-6">
+            <div className="lyricsContainer col-lg-9">
               <Lyrics />
             </div>
 
