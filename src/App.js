@@ -24,7 +24,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       };
 
 
-      this.videoSearch();
+      this.videoSearch('guitars');
       // console.log(this.videoSearch);
 
 
@@ -83,7 +83,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
               <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
 
-          
+
 
           {/* <!-- Footer --> */}
           <footer>
