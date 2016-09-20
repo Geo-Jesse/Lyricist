@@ -16,13 +16,15 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
   class App extends Component {
     constructor(props) {
       super(props);
+      // console.log(App);
 
       this.state = {
         videos: [],
         activeVideo: null
       };
 
-      this.videoSearch('bears');
+      this.videoSearch();
+      // console.log(this.videoSearch);
 
       this.onSearchTermChanged = _.debounce(this.onSearchTermChanged, 200)
     }
@@ -33,6 +35,9 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
+        if (videos.length > 4) {
+          videos.pop();
+        }
         console.log('videos', videos);
 
         this.setState({
@@ -70,10 +75,19 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
               </div>
           </div>
           {/* <!-- /.row --> */}
-            {/* <VideoList /> */}
+          <div className="row text-center">
 
-          {/* <!-- /.row --> */}
+              <div className="col-md-3 col-sm-6 hero-feature">
+                  <div className="thumbnail">
 
+              <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
+
+          <div className="caption">
+
+                  </div>
+              </div>
+          </div>
+        </div>
           <hr />
 
           {/* <!-- Footer --> */}
