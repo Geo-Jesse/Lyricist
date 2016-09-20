@@ -5,7 +5,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchReturn from './components/SearchReturn';
 import Lyrics from './components/Lyrics';
-// import VideoList from './components/VideoList';
+import VideoList from './components/VideoList';
 
 import YTSearch from 'youtube-api-search';
 
