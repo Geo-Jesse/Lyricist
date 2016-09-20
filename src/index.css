@@ -42,13 +42,3 @@ header{
 .search-return{
   float: right;
 }
-.hero-feature {
-  padding: 10px;
-  margin: 0;
-
-}
-.thumbnail {
-  padding: 10px;
-  float: left;
-  clear: both;
-}
