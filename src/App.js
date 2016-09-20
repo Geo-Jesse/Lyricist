@@ -17,13 +17,18 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
   class App extends Component {
     constructor(props) {
       super(props);
+      // console.log(App);
 
       this.state = {
         videos: [],
         activeVideo: null
       };
 
-      this.videoSearch('bears');
+
+      this.videoSearch();
+      // console.log(this.videoSearch);
+
+
 //auto search
       this.onSearchTermChanged = _.debounce(this.onSearchTermChanged, 200)
     }
@@ -34,9 +39,10 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
+
         // console.log('videos', videos);
 
-        //VIDEO POP 
+        //VIDEO POP
         if (videos.length>4){
           videos.pop()
         }
@@ -58,6 +64,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
     return (
       <div className="container">
         <SearchBar onSearchTermChanged={this.onSearchTermChanged.bind(this)}/>
+
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
             <div className="lyricsContainer col-lg-8">
@@ -75,7 +82,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
               </div>
           </div>
 
-          <VideoList videos={this.state.videos}/>
+          <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
 
           <hr />
 
