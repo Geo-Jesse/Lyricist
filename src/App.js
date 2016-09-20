@@ -5,7 +5,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchReturn from './components/SearchReturn';
 import Lyrics from './components/Lyrics';
-import VideoList from './components/VideoList';
+// import VideoList from './components/VideoList';
 
 import YTSearch from 'youtube-api-search';
 
@@ -23,9 +23,12 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
         activeVideo: null
       };
 
+
       this.videoSearch();
       // console.log(this.videoSearch);
 
+
+//auto search
       this.onSearchTermChanged = _.debounce(this.onSearchTermChanged, 200)
     }
 
@@ -61,6 +64,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           <header className="jumbotron hero-spacer col-lg-12">
             <div className="lyricsContainer col-lg-8">
               <Lyrics />
+              <SearchReturn />
 
             </div>
 
