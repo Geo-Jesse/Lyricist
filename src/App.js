@@ -41,7 +41,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
         if (videos.length > 4) {
           videos.pop();
         }
-        // console.log('videos', videos);
+        console.log('videos', videos);
 
         this.setState({
           videos: videos,
