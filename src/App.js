@@ -5,7 +5,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchReturn from './components/SearchReturn';
 import Lyrics from './components/Lyrics';
-// import VideoList from './components/VideoList';
+import VideoList from './components/VideoList';
 
 import YTSearch from 'youtube-api-search';
 
@@ -79,20 +79,11 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
               </div>
           </div>
           {/* <!-- /.row --> */}
-          <div className="row text-center">
 
-              <div className="col-md-3 col-sm-6 hero-feature">
-                  <div className="thumbnail">
 
               <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
 
-          <div className="caption">
-
-                  </div>
-              </div>
-          </div>
-        </div>
-          <hr />
+          
 
           {/* <!-- Footer --> */}
           <footer>

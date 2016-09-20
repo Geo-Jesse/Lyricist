@@ -9,12 +9,14 @@ class VideoList extends Component {
       // console.log('value ', index);
 
 
-        return <VideoListItem onVideoSelect={this.props.onVideoSelect} videoItem={value} key={value.etag} videos={this.props.videos} />;
+        return <VideoListItem onVideoSelect={this.props.onVideoSelect} videoItem={value} key={value.etag} />;
     });
     return (
-      <ul className="col-md-4 list-group">
-        {listItems}
-      </ul>
+      <div className="col-md-3 col-sm-6 hero-feature">
+           <div className="thumbnail">
+               {listItems} 
+           </div>
+       </div>
     )
 
   }
