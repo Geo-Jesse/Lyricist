@@ -5,11 +5,12 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import SearchReturn from './components/SearchReturn';
 import Lyrics from './components/Lyrics';
-// import VideoList from './components/VideoList';
-
-import YTSearch from 'youtube-api-search';
+import VideoList from './components/VideoList';
 
 import _ from 'lodash';
+
+//imported for the youtube API
+import YTSearch from 'youtube-api-search';
 
 const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
@@ -33,7 +34,12 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
-        console.log('videos', videos);
+        // console.log('videos', videos);
+
+        //VIDEO POP 
+        if (videos.length>4){
+          videos.pop()
+        }
 
         this.setState({
           videos: videos,
@@ -57,9 +63,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
             <div className="lyricsContainer col-lg-8">
               <Lyrics />
               <SearchReturn />
-
             </div>
-
           </header>
 
           <hr />
@@ -70,10 +74,8 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
                   <h3>Latest Features</h3>
               </div>
           </div>
-          {/* <!-- /.row --> */}
-            {/* <VideoList /> */}
 
-          {/* <!-- /.row --> */}
+          <VideoList videos={this.state.videos}/>
 
           <hr />
 
