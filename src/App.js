@@ -68,8 +68,8 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
             </div>
             <div className="search-return col-lg-6">
               <VideoReturn video={this.state.activeVideo} />
-            </div>
 
+            </div>
 
           </header>
 
