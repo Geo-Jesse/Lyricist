@@ -74,8 +74,6 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
     }
 
     getLyrics(lyrics) {
-
-
       let url = "http://localhost:3000/lyrics"
 
       axios.get(url).then((data) => {
@@ -100,7 +98,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
             {/* //Lyrics return */}
             <div className="lyricsContainer col-lg-6">
-              <Lyrics>{this.renderLyrics}</Lyrics>
+              <Lyrics></Lyrics>
             </div>
 
             {/* video return */}
