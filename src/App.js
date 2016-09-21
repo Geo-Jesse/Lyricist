@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import SearchBar from './components/SearchBar';
-import SearchReturn from './components/SearchReturn';
+import VideoReturn from './components/VideoReturn';
 import Lyrics from './components/Lyrics';
 import VideoList from './components/VideoList';
 
@@ -62,11 +62,14 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
         <SearchBar onSearchTermChanged={this.onSearchTermChanged.bind(this)}/>
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
-            <div className="lyricsContainer col-lg-8">
-              <Lyrics />
-              <SearchReturn />
 
+            <div className="lyricsContainer col-lg-6">
+              <Lyrics />
             </div>
+            <div className="search-return col-lg-6">
+              <VideoReturn video={this.state.activeVideo} />
+            </div>
+
 
           </header>
 

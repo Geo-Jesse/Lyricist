@@ -13,8 +13,8 @@ class VideoList extends Component {
     });
     return (
       <div className="row text-center">
-               {listItems}
-           </div>
+        {listItems}
+      </div>
     )
 
   }
