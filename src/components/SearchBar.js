@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 
-
 class SearchBar extends Component {
   constructor(props){
     super(props)
@@ -11,16 +10,15 @@ class SearchBar extends Component {
     e.preventDefault()
     let lyrics = this.refs.songTitle.value
     this.props.getLyrics(lyrics)
-
   }
   render(){
     return(
       <div>
+      <input className="submitButton" type="submit" />
       <form onSubmit={this.handleSubmit}>
-        <input className="searchBar" ref="songTitle" type="text" placeholder="enter artist/song here" onKeyUp={(event) => {
+        <input className="searchBar" ref="songTitle" type="text" placeholder="Enter Artist or Song Here" onKeyUp={(event) => {
           this.props.onSearchTermChanged(event.target.value);
         }} />
-        <input className="submitButton" type="submit" />
       </form>
       </div>
     )

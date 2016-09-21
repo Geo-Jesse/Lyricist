@@ -42,7 +42,6 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       this.videoSearch(term);
     }
 
-
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
         if (videos.length > 4) {
@@ -113,7 +112,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
         {/* <!-- Title --> */}
         <div className="row">
             <div className="col-lg-12">
-                <h3>Latest Features</h3>
+                <h3>Other Videos</h3>
             </div>
         </div>
         {/* <!-- /.row --> */}
