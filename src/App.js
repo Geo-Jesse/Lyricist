@@ -28,7 +28,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
         lyrics: {},
         fetchedLyrics: false
       };
-      console.log(this);
+      // console.log(this);
 
       this.videoSearch('guitars');
       // console.log(this.videoSearch);
@@ -73,9 +73,9 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       )
     }
 
-    getLyrics(e) {
-      e.preventDefault()
-      let lyrics = this.refs.songTitle.value
+    getLyrics(lyrics) {
+
+
       let url = "http://localhost:3000/lyrics"
 
       axios.get(url).then((data) => {
@@ -91,7 +91,10 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
   render() {
     return (
       <div className="container">
-        <SearchBar onSearchTermChanged={this.onSearchTermChanged.bind(this)}/>
+        <SearchBar
+          onSearchTermChanged={this.onSearchTermChanged.bind(this)}
+          getLyrics={this.getLyrics}
+        />
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
 
