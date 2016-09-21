@@ -33,6 +33,8 @@ body {
   max-height: 350px;
   overflow: scroll;
   display: inline-block;
+  white-space: pre-line;
+  font-size: 20px;
   /*padding: 10px;*/
 }
 header{

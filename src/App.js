@@ -13,25 +13,24 @@ import _ from 'lodash';
 
 const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
-  class App extends Component {
-    constructor(props) {
-      super(props);
-      // console.log(App);
-      this.getLyrics = this.getLyrics.bind(this)
-      this.renderLyrics = this.renderLyrics.bind(this)
+class App extends Component {
+  constructor(props) {
+    super(props);
+    // console.log(App);
+    this.getLyrics = this.getLyrics.bind(this)
+    this.renderLyrics = this.renderLyrics.bind(this)
 
 
+    this.state = {
+      videos: [],
+      activeVideo: null,
+      lyrics: '',
+      fetchedLyrics: false
+    };
+    // console.log(this);
 
-      this.state = {
-        videos: [],
-        activeVideo: null,
-        lyrics: '',
-        fetchedLyrics: false
-      };
-      // console.log(this);
-
-      this.videoSearch('guitars');
-      // console.log(this.videoSearch);
+    this.videoSearch('guitars');
+    // console.log(this.videoSearch);
 
 
 //auto search
@@ -63,7 +62,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       })
     }
 
-    // video return
+    // lyrics return
     renderLyrics() {
       if (!this.state.fetchedLyrics) {
         return <p>enter song title</p>
