@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import axios from './utils/axios';
 import './App.css';
 
 import SearchBar from './components/SearchBar';
@@ -17,12 +17,18 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
     constructor(props) {
       super(props);
       // console.log(App);
+      this.getLyrics = this.getLyrics.bind(this)
+      this.renderLyrics = this.renderLyrics.bind(this)
+
+
 
       this.state = {
         videos: [],
-        activeVideo: null
+        activeVideo: null,
+        lyrics: {},
+        fetchedLyrics: false
       };
-
+      console.log(this);
 
       this.videoSearch('guitars');
       // console.log(this.videoSearch);
@@ -36,12 +42,13 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       this.videoSearch(term);
     }
 
+
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
         if (videos.length > 4) {
           videos.pop();
         }
-        console.log('videos', videos);
+        // console.log('videos', videos);
 
         this.setState({
           videos: videos,
@@ -56,6 +63,31 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       })
     }
 
+    // video return
+    renderLyrics() {
+      if (!this.state.fetchedLyrics) {
+        return <p>enter song title</p>
+      }
+      return (
+        <div>{this.state.lyrics}</div>
+      )
+    }
+
+    getLyrics(e) {
+      e.preventDefault()
+      let lyrics = this.refs.songTitle.value
+      let url = "http://localhost:3000/lyrics"
+
+      axios.get(url).then((data) => {
+         console.log(data.data[0].lyrics);
+
+        this.setState({
+          lyrics: data,
+          fetchedLyrics: true
+        })
+      })
+    }
+
   render() {
     return (
       <div className="container">
@@ -63,9 +95,12 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           {/* <!-- Jumbotron Header --> */}
           <header className="jumbotron hero-spacer col-lg-12">
 
+            {/* //Lyrics return */}
             <div className="lyricsContainer col-lg-6">
-              <Lyrics />
+              <Lyrics>{this.renderLyrics}</Lyrics>
             </div>
+
+            {/* video return */}
             <div className="search-return col-lg-6">
               <VideoReturn video={this.state.activeVideo} />
 
@@ -92,7 +127,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           <footer>
               <div className="row">
                   <div className="col-lg-12">
-                      <p>Copyright &copy; Kickbutt GA WDI8 Developers</p>
+                      <p>Copyright &copy; Kickbutt GA WDI7 Developers</p>
                   </div>
               </div>
           </footer>
