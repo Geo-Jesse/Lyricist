@@ -25,7 +25,7 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       this.state = {
         videos: [],
         activeVideo: null,
-        lyrics: {},
+        lyrics: '',
         fetchedLyrics: false
       };
       // console.log(this);
@@ -77,10 +77,10 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
       let url = "http://localhost:3000/lyrics"
 
       axios.get(url).then((data) => {
-         console.log(data.data[0].lyrics);
+        //  console.log(data.data[0].lyrics);
 
         this.setState({
-          lyrics: data,
+          lyrics: data.data[0].lyrics,
           fetchedLyrics: true
         })
       })
@@ -94,44 +94,40 @@ const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
           getLyrics={this.getLyrics}
         />
           {/* <!-- Jumbotron Header --> */}
-          <header className="jumbotron hero-spacer col-lg-12">
+        <header className="jumbotron hero-spacer col-lg-12">
 
-            {/* //Lyrics return */}
-            <div className="lyricsContainer col-lg-6">
-              <Lyrics></Lyrics>
-            </div>
-
-            {/* video return */}
-            <div className="search-return col-lg-6">
-              <VideoReturn video={this.state.activeVideo} />
-
-            </div>
-
-          </header>
-
-          <hr />
-
-          {/* <!-- Title --> */}
-          <div className="row">
-              <div className="col-lg-12">
-                  <h3>Latest Features</h3>
-              </div>
+          {/* //Lyrics return */}
+          <div className="lyricsContainer col-lg-6">
+            <Lyrics lyrics={this.state.lyrics} />
           </div>
-          {/* <!-- /.row --> */}
 
+          {/* video return */}
+          <div className="search-return col-lg-6">
+            <VideoReturn video={this.state.activeVideo} />
+          </div>
 
-              <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
+        </header>
 
+        <hr />
 
+        {/* <!-- Title --> */}
+        <div className="row">
+            <div className="col-lg-12">
+                <h3>Latest Features</h3>
+            </div>
+        </div>
+        {/* <!-- /.row --> */}
 
-          {/* <!-- Footer --> */}
-          <footer>
-              <div className="row">
-                  <div className="col-lg-12">
-                      <p>Copyright &copy; Kickbutt GA WDI7 Developers</p>
-                  </div>
-              </div>
-          </footer>
+        <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
+
+        {/* <!-- Footer --> */}
+        <footer>
+            <div className="row">
+                <div className="col-lg-12">
+                    <p>Copyright &copy; Kickbutt GA WDI7 Developers</p>
+                </div>
+            </div>
+        </footer>
 
       </div>
     );
