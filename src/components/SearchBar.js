@@ -5,20 +5,27 @@ class SearchBar extends Component {
   constructor(props){
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
+
+
+
   }
   handleSubmit(e){
     e.preventDefault()
     let lyrics = this.refs.songTitle.value
     this.props.getLyrics(lyrics)
   }
+
+
   render(){
     return(
       <div>
-      <input className="submitButton" type="submit" />
+      <input className="submitButton"  type="submit" />
       <form onSubmit={this.handleSubmit}>
         <input className="searchBar" ref="songTitle" type="text" placeholder="Enter Artist or Song Here" onKeyUp={(event) => {
           this.props.onSearchTermChanged(event.target.value);
         }} />
+
+
       </form>
       </div>
     )
