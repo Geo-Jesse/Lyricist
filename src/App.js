@@ -13,12 +13,15 @@ import _ from 'lodash';
 
 const API_KEY='AIzaSyCnk7rSA5owsjUDTLgoYRho-7W6Y9BeWV0';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
     // console.log(App);
     this.getLyrics = this.getLyrics.bind(this)
     this.renderLyrics = this.renderLyrics.bind(this)
+    this.lyricSearch = this.lyricSearch.bind(this)
+
 
 
     this.state = {
@@ -38,8 +41,17 @@ class App extends Component {
     }
 
     onSearchTermChanged(term) {
-      this.videoSearch(term);
+      this.videoSearch(term)
+      this.lyricSearch(term);
     }
+    // console.log(lyric);
+
+
+    lyricSearch(term) {
+      this.getLyrics({songTitle: term })
+      console.log("lyrics ", term);
+    }
+
 
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
@@ -79,18 +91,19 @@ class App extends Component {
 
         this.setState({
           lyrics: data.data[0].lyrics,
-          fetchedLyrics: true
+          fetchedLyrics: true,
         })
       })
     }
+
 
   render() {
     return (
       <div className="container">
         <SearchBar
           onSearchTermChanged={this.onSearchTermChanged.bind(this)}
-          getLyrics={this.getLyrics}
-        />
+          getLyrics={this.getLyrics} />
+
           {/* <!-- Jumbotron Header --> */}
         <header className="jumbotron hero-spacer col-lg-12">
 
