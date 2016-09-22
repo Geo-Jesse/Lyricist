@@ -18,9 +18,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     // console.log(App);
+    this.onSearchTermChanged = this.onSearchTermChanged.bind(this)
     this.getLyrics = this.getLyrics.bind(this)
-    this.renderLyrics = this.renderLyrics.bind(this)
-    this.lyricSearch = this.lyricSearch.bind(this)
+    // this.renderLyrics = this.renderLyrics.bind(this)
+
 
 
 
@@ -32,7 +33,7 @@ class App extends Component {
     };
     // console.log(this);
 
-    this.videoSearch('guitars');
+    this.videoSearch('');
     // console.log(this.videoSearch);
 
 
@@ -42,28 +43,38 @@ class App extends Component {
 
     onSearchTermChanged(term) {
       this.videoSearch(term)
-      this.lyricSearch(term);
-    }
-    // console.log(lyric);
-
-
-    lyricSearch(term) {
-      this.getLyrics({songTitle: term })
-      console.log("lyrics ", term);
+      this.getLyrics(term);
+      //returns back the searchterm in console log
+      // console.log(term);
     }
 
+
+    getLyrics(lyrics) {
+      let url = "https://lyricist-api.herokuapp.com/lyrics/"+lyrics
+
+      axios.get(url).then((data) => {
+        //  console.log(data.data.lyrics);
+
+        this.setState({
+          lyrics: data.data.lyrics,
+          fetchedLyrics: true
+        })
+      })
+    }
 
     videoSearch(term) {
       YTSearch({ key: API_KEY, term: term }, (videos) => {
         if (videos.length > 4) {
           videos.pop();
         }
+        //youtube video objects returned
         // console.log('videos', videos);
 
         this.setState({
           videos: videos,
           activeVideo: videos[0]
         });
+        // console.log(videos);
       });
     }
 
@@ -73,35 +84,11 @@ class App extends Component {
       })
     }
 
-    // lyrics return
-    renderLyrics() {
-      if (!this.state.fetchedLyrics) {
-        return <p>enter song title</p>
-      }
-      return (
-        <div>{this.state.lyrics}</div>
-      )
-    }
-
-    getLyrics(lyrics) {
-      let url = "http://localhost:3000/lyrics"
-
-      axios.get(url).then((data) => {
-        //  console.log(data.data[0].lyrics);
-
-        this.setState({
-          lyrics: data.data[0].lyrics,
-          fetchedLyrics: true,
-        })
-      })
-    }
-
-
   render() {
     return (
       <div className="container">
         <SearchBar
-          onSearchTermChanged={this.onSearchTermChanged.bind(this)}
+          onSearchTermChanged={this.onSearchTermChanged}
           getLyrics={this.getLyrics} />
 
           {/* <!-- Jumbotron Header --> */}
@@ -110,7 +97,9 @@ class App extends Component {
           {/* //Lyrics return */}
           <div className="lyricsContainer col-lg-6">
             <Lyrics lyrics={this.state.lyrics} />
+            {/* {this.state.lyrics} */}
           </div>
+
 
           {/* video return */}
           <div className="search-return col-lg-6">
