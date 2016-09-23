@@ -10,7 +10,6 @@ class VideoReturn extends Component {
 
     return(
       <div className="video-detail col-lg-12">
-      <h4>{this.props.video.snippet.title}</h4>
         <div className="embed-responsive embed-responsive-16by9">
           <iframe className="embed-responsive-item" src={videoUrl} ></iframe>
         </div>

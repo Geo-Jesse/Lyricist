@@ -23,7 +23,7 @@ class SearchBar extends Component {
       <div>
       <form onSubmit={this.handleSubmit}>
       <Icon name="search" className="search-icon"></Icon>
-        <input className="searchBar" ref="songTitle" type="text" placeholder="Enter Artist or Song Here" onKeyUp={(event) => {
+        <input className="searchBar" ref="songTitle" type="text" placeholder="Enter Song Title" onKeyUp={(event) => {
           this.props.onSearchTermChanged(event.target.value);
         }} />
 
