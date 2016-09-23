@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Icon} from 'react-fa'
+
 
 
 class SearchBar extends Component {
@@ -19,8 +21,8 @@ class SearchBar extends Component {
   render(){
     return(
       <div>
-      <input className="submitButton"  type="submit" />
       <form onSubmit={this.handleSubmit}>
+      <Icon name="search" className="search-icon"></Icon>
         <input className="searchBar" ref="songTitle" type="text" placeholder="Enter Artist or Song Here" onKeyUp={(event) => {
           this.props.onSearchTermChanged(event.target.value);
         }} />

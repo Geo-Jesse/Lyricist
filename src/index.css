@@ -8,20 +8,41 @@ body {
  text-align: center;
  margin: 0 auto;
  padding: 0;
+ text-align: center;
 }
+.thumb {
+
+}
+.search-icon {
+  margin-top: 20px;
+  position: absolute;
+  float: right;
+  font-size: 30px;
+  color: white;
+  text-indent: 15px;
+  }
 .searchBar{
   /*text-align: center;*/
+  text-indent: 65px;
   border-top: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   border-right: none;
   border-left: none;
   width: 100%;
   height: 40px;
-  margin: 10px 0 10px 0;
+  margin: 20px 0 20px 0;
+  background: transparent;
+  letter-spacing: 3.5px;
+  font-size: 30px;
+  color: white;
   /*text-align: center;*/
+}
+input[type="text"].searchBar::-webkit-input-placeholder {
+   color: white;
 }
 .searchBar:focus {
   outline: none;
+  cursor: auto;
 }
 .jumbotron{
   max-height: 400px;
@@ -38,6 +59,7 @@ body {
   display: inline-block;
   white-space: pre-line;
   font-size: 20px;
+  color: black;
   /*padding: 10px;*/
 }
 .hero-feature:hover{
