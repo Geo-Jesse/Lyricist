@@ -91,6 +91,7 @@ class App extends Component {
           onSearchTermChanged={this.onSearchTermChanged}
           getLyrics={this.getLyrics} />
 
+
           {/* <!-- Jumbotron Header --> */}
         <header className="jumbotron hero-spacer col-lg-12">
 
