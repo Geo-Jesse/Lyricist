@@ -2,7 +2,7 @@
   "name": "lyricist",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oiseaunoir.github.io/Lyricist/",
+  "homepage": "https://oiseaunoir.github.io/Lyricist",
   "devDependencies": {
     "react-scripts": "0.4.1"
   },
