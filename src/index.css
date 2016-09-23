@@ -2,14 +2,13 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-
   background-color: grey;
   background-image: url("../images/unsplash-kitsune-4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height:1000px;
+  height:1100px;
 }
 .container {
  text-align: center;
@@ -25,10 +24,10 @@ body {
 }
 
 .search-icon {
-  margin-top: 20px;
+  margin-top: 43px;
   position: absolute;
   float: right;
-  font-size: 25px;
+  font-size: 30px;
   color: white;
   text-indent: 15px;
   }
@@ -41,12 +40,11 @@ body {
   border-left: none;
   width: 100%;
   height: 40px;
-  margin: 20px 0 20px 0;
+  margin: 40px 0 20px 0;
   background: transparent;
-  letter-spacing: 1.25px;
-  font-size: 20px;
+  letter-spacing: 2.5px;
+  font-size: 25px;
   color: white;
-  /*text-align: center;*/
 }
 input[type="text"].searchBar::-webkit-input-placeholder {
    color: white;
@@ -56,21 +54,19 @@ input[type="text"].searchBar::-webkit-input-placeholder {
   cursor: auto;
 }
 .jumbotron{
-  max-height: 400px;
+  height: 450px;
   padding: 10px;
   text-align: center;
-  background-color: grey;
   /*display: inline-block;*/
 }
 .lyricsContainer{
   text-align: center;
   margin: 0 auto;
-  /*max-height: 350px;*/
   overflow: auto;
   display: inline-block;
   white-space: pre-line;
-  font-size: 17px;
-  color: black;
+  font-size: 27px;
+  background: transparent;
   /*border-bottom: 1px solid white;*/
 }
 .hero-feature:hover{
@@ -83,8 +79,9 @@ input[type="text"].searchBar::-webkit-input-placeholder {
   /*margin-top: 40px;*/
   padding: 25px;
   font-size: 30px;
-  color: black;
   clear: both;
+  margin-bottom: 45px;
+  margin-top: 60px;
 }
 .footer{
   margin-top: 60px;
@@ -92,11 +89,11 @@ input[type="text"].searchBar::-webkit-input-placeholder {
   clear: both;
   /*position: absolute;*/
 }
-.displayBox{
-  /*border: 1px solid white;*/
-  /*height: 400px;*/
-}
 .search-return{
   /*display:*/
+  margin-top: 75px;
   overflow: visible;
+}
+.caption {
+  margin-top: 20px;
 }
