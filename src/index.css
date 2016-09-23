@@ -17,7 +17,7 @@ body {
  text-align: center;
 }
 .layer {
-    background-color: rgba(76, 0, 150, 0.3);
+    background-color: rgba(76, 50, 150, 0.5);
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -42,7 +42,7 @@ body {
   height: 40px;
   margin: 40px 0 20px 0;
   background: transparent;
-  letter-spacing: 2.5px;
+  letter-spacing: 1px;
   font-size: 25px;
   color: white;
 }
