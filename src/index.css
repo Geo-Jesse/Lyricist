@@ -3,6 +3,10 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: grey;
+  background-image: url("../images/unsplash-kitsune-4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
  text-align: center;
