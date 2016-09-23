@@ -65,8 +65,9 @@ input[type="text"].searchBar::-webkit-input-placeholder {
   overflow: auto;
   display: inline-block;
   white-space: pre-line;
-  font-size: 27px;
+  font-size: 23px;
   background: transparent;
+  font-family: 'Karla', sans-serif;
   /*border-bottom: 1px solid white;*/
 }
 .hero-feature:hover{
