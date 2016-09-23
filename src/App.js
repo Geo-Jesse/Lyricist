@@ -92,40 +92,42 @@ class App extends Component {
           getLyrics={this.getLyrics} />
 
 
-          {/* <!-- Jumbotron Header --> */}
+        {/* <!-- Jumbotron Header --> */}
         {/* <header className="jumbotron hero-spacer col-lg-12"> */}
 
           {/* //Lyrics return */}
-          <div className="lyricsContainer col-lg-6 col-sm-12">
+          
+          <div className=" jumbotron lyricsContainer col-lg-6 col-md-6 col-sm-12">
             <Lyrics lyrics={this.state.lyrics} />
             {/* {this.state.lyrics} */}
           </div>
 
 
           {/* video return */}
-          <div className="search-return col-lg-6 col-sm-12">
+          <div className="search-return col-lg-6 col-md-6 col-sm-12">
             <VideoReturn video={this.state.activeVideo} />
           </div>
 
+
         {/* </header> */}
 
-        <hr />
+
 
         {/* <!-- Title --> */}
-        <div className="row">
-            <div className="col-lg-12">
-                <h3>Other Videos</h3>
+
+            <div className="row col-lg-12">
+                <h3 className="otherVideos">Other Videos</h3>
             </div>
-        </div>
+
         {/* <!-- /.row --> */}
 
         <VideoList onVideoSelect={this.onVideoSelect.bind(this)} videos={this.state.videos} />
 
         {/* <!-- Footer --> */}
         <footer>
-            <div className="row">
+            <div className="ro">
                 <div className="col-lg-12">
-                    <p>Copyright &copy; Kickbutt GA WDI7 Developers</p>
+                    <p className="footer">Copyright &copy; Kickbutt GA WDI7 Developers</p>
                 </div>
             </div>
         </footer>
