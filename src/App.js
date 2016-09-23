@@ -92,21 +92,21 @@ class App extends Component {
           getLyrics={this.getLyrics} />
 
           {/* <!-- Jumbotron Header --> */}
-        <header className="jumbotron hero-spacer col-lg-12">
+        {/* <header className="jumbotron hero-spacer col-lg-12"> */}
 
           {/* //Lyrics return */}
-          <div className="lyricsContainer col-lg-6">
+          <div className="lyricsContainer col-lg-6 col-sm-12">
             <Lyrics lyrics={this.state.lyrics} />
             {/* {this.state.lyrics} */}
           </div>
 
 
           {/* video return */}
-          <div className="search-return col-lg-6">
+          <div className="search-return col-lg-6 col-sm-12">
             <VideoReturn video={this.state.activeVideo} />
           </div>
 
-        </header>
+        {/* </header> */}
 
         <hr />
 

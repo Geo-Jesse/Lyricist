@@ -2,9 +2,10 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+  background-color: grey;
 }
 .container {
- /*text-align: center;*/
+ text-align: center;
  margin: 0 auto;
  padding: 0;
 }
@@ -30,6 +31,8 @@ body {
   /*display: inline-block;*/
 }
 .lyricsContainer{
+  text-align: center;
+  margin: 0 auto;
   max-height: 350px;
   overflow: scroll;
   display: inline-block;
