@@ -20,7 +20,11 @@ Technologies used to create this application include:
 * axios
 * CORS
 
-## Wireframes
+## "Wireframes" (term used loosely)
 
-Inline-style:
-![Prelim Wireframe](images/prelim-wireframe.jpg)
+"Wireframe" 1:
+![Prelim Wireframe 1](images/prelim-wireframe.jpg)
+
+
+"Wireframe" 2:
+![Prelim Wireframe 2](images/wireframe.jpg)
