@@ -87,6 +87,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+
+
         <SearchBar
           onSearchTermChanged={this.onSearchTermChanged}
           getLyrics={this.getLyrics} />
@@ -131,8 +133,8 @@ class App extends Component {
                 </div>
             </div>
         </footer>
-
       </div>
+    
     );
   }
 }
